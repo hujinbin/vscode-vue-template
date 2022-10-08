@@ -19,7 +19,13 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Hello World from VueQuick!');
 	});
 
+	let templateDisposable = vscode.commands.registerCommand('template page', (e) => {
+		// 复制成功后给一个提示
+			vscode.window.showInformationMessage(`copied to the clipboard `);
+	});
+	
 	context.subscriptions.push(disposable);
+	context.subscriptions.push(templateDisposable);
 }
 
 // this method is called when your extension is deactivated

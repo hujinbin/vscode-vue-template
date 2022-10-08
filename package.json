@@ -1,25 +1,33 @@
 {
-  "name": "vuequick",
+	"name": "vuequick",
 	"displayName": "VueQuick",
 	"description": "vue快速生成页面的插件",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "^1.69.0"
+		"vscode": "^1.20.0"
 	},
 	"categories": [
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:vuequick.helloWorld"
+		"onCommand:vuequick.helloWorld"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "vuequick.helloWorld",
-				"title": "Hello World"
+				"title": "新建模版"
 			}
-		]
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "vuequick.helloWorld",
+					"group": "navigation"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"dev": "npm run watch",
@@ -34,7 +42,7 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.69.0",
+		"@types/vscode": "^1.50.0",
 		"@types/glob": "^7.2.0",
 		"@types/mocha": "^9.1.1",
 		"@types/node": "16.x",
