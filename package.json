@@ -29,6 +29,20 @@
 			]
 		}
 	},
+	"menus": {
+		"explorer/context": [
+			{
+				"command": "quick-add",
+				"group": "navigation"
+			}
+		]
+	},
+	"snippets": [
+		{
+			"language": "javascript",
+			"path": "./snippets/javascript.json"
+		}
+	],
 	"scripts": {
 		"dev": "npm run watch",
 		"vscode:prepublish": "npm run package",

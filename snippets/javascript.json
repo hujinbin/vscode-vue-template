@@ -1,0 +1,30 @@
+{
+    "contributes": {
+        "commands": [
+            {
+                "command": "quick-add",
+                "title": "快速添加模版"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "resourceLangId == dart",
+                    "command": "extension.EasyFlutterPlugin",
+                    "group": "navigation"
+                }
+            ]
+        },
+        "configuration": {
+            "type": "object",
+            "title": "快速生成页面",
+            "properties": {
+                "easy-flutter-plugin.yourName": {
+                    "type": "string",
+                    "default": "guest",
+                    "description": "你的名字"
+                },
+            }
+        }
+    }
+}
