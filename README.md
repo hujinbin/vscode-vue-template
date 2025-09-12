@@ -1,70 +1,70 @@
-# vuequick README
+# vuequick 插件说明
 
-This is the README for your extension "vuequick". After writing up a brief description, we recommend including the following sections.
+这是你的扩展 "vuequick" 的中文说明文档。建议包含以下内容：
 
-## Features
+## 功能介绍
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+描述你的扩展的具体功能，并附上插件运行截图。图片路径请相对于本 README 文件填写。
 
-For example if there is an image subfolder under your extension project workspace:
+例如，如果你的项目有 images 文件夹：
 
-\!\[feature X\]\(images/feature-x.png\)
+![功能 X](images/feature-x.png)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+> 提示：许多流行扩展会使用动画演示功能。推荐使用简短、易于理解的动画。
 
-## Requirements
+## 依赖要求
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+如有依赖或前置条件，请在此说明如何安装和配置。
 
-## Extension Settings
+## 扩展设置
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+如扩展通过 `contributes.configuration` 添加了 VS Code 设置，请在此说明。
 
-For example:
+例如：
 
-This extension contributes the following settings:
+本扩展贡献了如下设置：
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+* `myExtension.enable`：启用/禁用本扩展
+* `myExtension.thing`：设置为 `blah` 可执行某项操作
 
-## Known Issues
+## 已知问题
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+列出已知问题，帮助用户避免重复反馈。
 
-## Release Notes
+## 更新日志
 
-Users appreciate release notes as you update your extension.
+每次更新请在此记录。
 
 ### 1.0.0
 
-Initial release of ...
+首次发布 ...
 
 ### 1.0.1
 
-Fixed issue #.
+修复了问题 #。
 
 ### 1.1.0
 
-Added features X, Y, and Z.
+新增功能 X、Y、Z。
 
 -----------------------------------------------------------------------------------------------------------
-## Following extension guidelines
+## 扩展开发规范
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+请确保已阅读并遵循官方扩展开发规范：
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+* [扩展开发规范](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Working with Markdown
+## Markdown 使用技巧
 
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+**注意：** 你可以使用 VS Code 编辑本 README。常用快捷键如下：
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
+* 分屏编辑（macOS：`Cmd+\`，Windows/Linux：`Ctrl+\`）
+* 切换预览（macOS：`Shift+Cmd+V`，Windows/Linux：`Shift+Ctrl+V`）
+* 按 `Ctrl+Space` 查看 Markdown 片段列表
 
-### For more information
+### 更多信息
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+* [VS Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown)
+* [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**祝你使用愉快！**
