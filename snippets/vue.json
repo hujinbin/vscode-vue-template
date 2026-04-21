@@ -1,0 +1,117 @@
+{
+    "Vue Component Template": {
+        "prefix": "vue-component",
+        "body": [
+            "<template>",
+            "  <div class=\"$1\">",
+            "    $2",
+            "  </div>",
+            "</template>",
+            "",
+            "<script>",
+            "export default {",
+            "  name: '$1',",
+            "  components: {},",
+            "  props: {},",
+            "  data() {",
+            "    return {",
+            "      $3",
+            "    };",
+            "  },",
+            "  computed: {},",
+            "  watch: {},",
+            "  created() {},",
+            "  mounted() {},",
+            "  methods: {",
+            "    $4",
+            "  }",
+            "}",
+            "</script>",
+            "",
+            "<style scoped>",
+            "$5",
+            "</style>"
+        ],
+        "description": "Vue组件模板"
+    },
+    "Vue Element UI Button": {
+        "prefix": "el-button",
+        "body": [
+            "<el-button type=\"$1\">$2</el-button>"
+        ],
+        "description": "Element UI按钮组件"
+    },
+    "Vue Element UI Input": {
+        "prefix": "el-input",
+        "body": [
+            "<el-input v-model=\"$1\" placeholder=\"$2\" />",
+        ],
+        "description": "Element UI输入框组件"
+    },
+    "Vue Element UI Table": {
+        "prefix": "el-table",
+        "body": [
+            "<el-table :data=\"$1\" style=\"width: 100%\">",
+            "  <el-table-column prop=\"$2\" label=\"$3\" width=\"180\" />",
+            "  <el-table-column prop=\"$4\" label=\"$5\" />",
+            "</el-table>",
+        ],
+        "description": "Element UI表格组件"
+    },
+    "Vue Element UI Dialog": {
+        "prefix": "el-dialog",
+        "body": [
+            "<el-dialog v-model=\"$1\" title=\"$2\" width=\"50%\">",
+            "  $3",
+            "  <template #footer>",
+            "    <span class=\"dialog-footer\">",
+            "      <el-button @click=\"$1 = false\">取消</el-button>",
+            "      <el-button type=\"primary\" @click=\"handleConfirm\">确定</el-button>",
+            "    </span>",
+            "  </template>",
+            "</el-dialog>",
+        ],
+        "description": "Element UI对话框组件"
+    },
+    "Vue Composition API": {
+        "prefix": "vue-composition",
+        "body": [
+            "<template>",
+            "  <div class=\"$1\">",
+            "    $2",
+            "  </div>",
+            "</template>",
+            "",
+            "<script setup>",
+            "import { ref, computed, onMounted } from 'vue';",
+            "",
+            "// Props",
+            "const props = defineProps(['$3']);",
+            "",
+            "// Emits",
+            "const emit = defineEmits(['$4']);",
+            "",
+            "// Reactive data",
+            "const $5 = ref('');",
+            "",
+            "// Computed properties",
+            "const $6 = computed(() => { return $5.value; });",
+            "",
+            "// Lifecycle hooks",
+            "onMounted(() => {",
+            "  $7",
+            "});",
+            "",
+            "// Methods",
+            "const $8 = () => {",
+            "  $9",
+            "};",
+            "</script>",
+            "",
+            "<style scoped>",
+            "$10",
+            "</style>"
+        ],
+        "description": "Vue Composition API模板"
+    }
+}
