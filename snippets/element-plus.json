@@ -1,0 +1,260 @@
+{
+  "ElButton": {
+    "prefix": "el-button",
+    "body": [
+      "<el-button type=\"${1|primary,success,warning,danger,info|}\" ${2| ,plain,round|}>$3</el-button>$0"
+    ],
+    "description": "Element Plus 按钮组件"
+  },
+  "ElInput": {
+    "prefix": "el-input",
+    "body": [
+      "<el-input v-model=\"${1:formData}.${2:field}\" placeholder=\"${3:请输入}\" clearable$4 />$0"
+    ],
+    "description": "Element Plus 输入框"
+  },
+  "ElSelect": {
+    "prefix": "el-select",
+    "body": [
+      "<el-select v-model=\"${1:formData}.${2:field}\" placeholder=\"${3:请选择}\" clearable>",
+      "\t<el-option v-for=\"item in ${4:options}\" :key=\"item.value\" :label=\"item.label\" :value=\"item.value\" />",
+      "</el-select>$0"
+    ],
+    "description": "Element Plus 下拉选择框"
+  },
+  "ElTable": {
+    "prefix": "el-table",
+    "body": [
+      "<el-table :data=\"${1:tableData}\" stripe border$2>",
+      "\t<el-table-column prop=\"${3:prop}\" label=\"${4:标签}\" />",
+      "</el-table>$0"
+    ],
+    "description": "Element Plus 表格"
+  },
+  "ElTableColumn": {
+    "prefix": "el-table-column",
+    "body": [
+      "<el-table-column prop=\"${1:prop}\" label=\"${2:标签}\"$3 />$0"
+    ],
+    "description": "Element Plus 表格列"
+  },
+  "ElTableColumnSlot": {
+    "prefix": "el-table-column-slot",
+    "body": [
+      "<el-table-column prop=\"${1:prop}\" label=\"${2:标签}\">",
+      "\t<template #default=\"{ row }\">",
+      "\t\t$3",
+      "\t</template>",
+      "</el-table-column>$0"
+    ],
+    "description": "表格列（自定义插槽）"
+  },
+  "ElTableColumnAction": {
+    "prefix": "el-table-column-action",
+    "body": [
+      "<el-table-column label=\"操作\" width=\"${1:200}\" fixed=\"right\">",
+      "\t<template #default=\"{ row }\">",
+      "\t\t<el-button type=\"primary\" link @click=\"handleEdit(row)\">编辑</el-button>",
+      "\t\t<el-button type=\"danger\" link @click=\"handleDelete(row)\">删除</el-button>",
+      "\t</template>",
+      "</el-table-column>$0"
+    ],
+    "description": "表格操作列"
+  },
+  "ElForm": {
+    "prefix": "el-form",
+    "body": [
+      "<el-form ref=\"${1:formRef}\" :model=\"${2:formData}\" :rules=\"${3:rules}\" label-width=\"${4:100px}\"$5>",
+      "\t$6",
+      "</el-form>$0"
+    ],
+    "description": "Element Plus 表单"
+  },
+  "ElFormItem": {
+    "prefix": "el-form-item",
+    "body": [
+      "<el-form-item label=\"${1:标签}\" prop=\"${2:prop}\"$3>",
+      "\t$4",
+      "</el-form-item>$0"
+    ],
+    "description": "Element Plus 表单项"
+  },
+  "ElFormItemInput": {
+    "prefix": "el-form-item-input",
+    "body": [
+      "<el-form-item label=\"${1:标签}\" prop=\"${2:prop}\">",
+      "\t<el-input v-model=\"${3:formData}.${2:prop}\" placeholder=\"请输入${1:标签}\" clearable />",
+      "</el-form-item>$0"
+    ],
+    "description": "表单项 + 输入框组合"
+  },
+  "ElFormItemSelect": {
+    "prefix": "el-form-item-select",
+    "body": [
+      "<el-form-item label=\"${1:标签}\" prop=\"${2:prop}\">",
+      "\t<el-select v-model=\"${3:formData}.${2:prop}\" placeholder=\"请选择${1:标签}\" clearable>",
+      "\t\t<el-option v-for=\"item in ${4:options}\" :key=\"item.value\" :label=\"item.label\" :value=\"item.value\" />",
+      "\t</el-select>",
+      "</el-form-item>$0"
+    ],
+    "description": "表单项 + 下拉选择组合"
+  },
+  "ElDialog": {
+    "prefix": "el-dialog",
+    "body": [
+      "<el-dialog v-model=\"${1:dialogVisible}\" title=\"${2:对话框标题}\" width=\"${3:30%}\"$4>",
+      "\t$5",
+      "\t<template #footer>",
+      "\t\t<el-button @click=\"${1:dialogVisible} = false\">取消</el-button>",
+      "\t\t<el-button type=\"primary\" @click=\"$6\">确定</el-button>",
+      "\t</template>",
+      "</el-dialog>$0"
+    ],
+    "description": "Element Plus 对话框"
+  },
+  "ElPagination": {
+    "prefix": "el-pagination",
+    "body": [
+      "<el-pagination",
+      "\t:current-page=\"${1:queryParams}.pageNum\"",
+      "\t:page-size=\"${1:queryParams}.pageSize\"",
+      "\t:page-sizes=\"[10, 20, 50, 100]\"",
+      "\t:total=\"${2:total}\"",
+      "\tlayout=\"total, sizes, prev, pager, next, jumper\"",
+      "\tbackground",
+      "\t@size-change=\"${3:handleQuery}\"",
+      "\t@current-change=\"${3:handleQuery}\"",
+      "/>$0"
+    ],
+    "description": "Element Plus 分页"
+  },
+  "ElCard": {
+    "prefix": "el-card",
+    "body": [
+      "<el-card shadow=\"${1|always,hover,never|}\"$2>",
+      "\t<template #header>$3</template>",
+      "\t$4",
+      "</el-card>$0"
+    ],
+    "description": "Element Plus 卡片"
+  },
+  "ElTabs": {
+    "prefix": "el-tabs",
+    "body": [
+      "<el-tabs v-model=\"${1:activeTab}\" type=\"${2|border-card,card,line|}\"$3>",
+      "\t<el-tab-pane label=\"${4:标签1}\" name=\"${5:tab1}\">$6</el-tab-pane>",
+      "</el-tabs>$0"
+    ],
+    "description": "Element Plus 标签页"
+  },
+  "ElTag": {
+    "prefix": "el-tag",
+    "body": [
+      "<el-tag type=\"${1|primary,success,warning,danger,info|}\"$2>${3:标签内容}</el-tag>$0"
+    ],
+    "description": "Element Plus 标签"
+  },
+  "ElSwitch": {
+    "prefix": "el-switch",
+    "body": [
+      "<el-switch v-model=\"${1:formData}.${2:field}\"$3 />$0"
+    ],
+    "description": "Element Plus 开关"
+  },
+  "ElDatePicker": {
+    "prefix": "el-date-picker",
+    "body": [
+      "<el-date-picker v-model=\"${1:formData}.${2:field}\" type=\"${3|date,datetime,daterange,datetimerange|}\" placeholder=\"${4:选择日期}\" value-format=\"YYYY-MM-DD\"$5 />$0"
+    ],
+    "description": "Element Plus 日期选择器"
+  },
+  "ElDrawer": {
+    "prefix": "el-drawer",
+    "body": [
+      "<el-drawer v-model=\"${1:drawerVisible}\" title=\"${2:抽屉标题}\" direction=\"${3|rtl,ltr,ttb,btt|}\"$4>",
+      "\t$5",
+      "</el-drawer>$0"
+    ],
+    "description": "Element Plus 抽屉"
+  },
+  "ElMessage": {
+    "prefix": "el-message",
+    "body": [
+      "ElMessage({ message: '${1:消息内容}', type: '${2|success,warning,info,error|}'$3 })$0"
+    ],
+    "description": "Element Plus 消息提示"
+  },
+  "ElMessageBox": {
+    "prefix": "el-message-box",
+    "body": [
+      "await ElMessageBox.confirm('${1:确认删除该条数据？}', '${2:提示}', { type: 'warning' })$0"
+    ],
+    "description": "Element Plus 消息弹框"
+  },
+  "ElUpload": {
+    "prefix": "el-upload",
+    "body": [
+      "<el-upload action=\"${1:/api/upload}\" list-type=\"${2|text,picture,picture-card|}\"$3>",
+      "\t<el-button type=\"primary\">点击上传</el-button>",
+      "\t<template #tip>",
+      "\t\t<div class=\"el-upload__tip\">$4</div>",
+      "\t</template>",
+      "</el-upload>$0"
+    ],
+    "description": "Element Plus 文件上传"
+  },
+  "ElRow": {
+    "prefix": "el-row",
+    "body": [
+      "<el-row :gutter=\"${1:20}\"$2>",
+      "\t<el-col :span=\"${3:12}\">$4</el-col>",
+      "</el-row>$0"
+    ],
+    "description": "Element Plus 栅格行"
+  },
+  "Vue3SetupScript": {
+    "prefix": "v3-setup",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "import { ref, reactive, computed, onMounted } from 'vue'",
+      "",
+      "$1",
+      "</script>$0"
+    ],
+    "description": "Vue 3 <script setup> 模版"
+  },
+  "Vue3Ref": {
+    "prefix": "v3-ref",
+    "body": [
+      "const ${1:name} = ref${2:<string>}(${3:''})$0"
+    ],
+    "description": "Vue 3 ref 定义"
+  },
+  "Vue3Reactive": {
+    "prefix": "v3-reactive",
+    "body": [
+      "const ${1:state} = reactive({",
+      "\t${2:key}: ${3:value},",
+      "})$0"
+    ],
+    "description": "Vue 3 reactive 定义"
+  },
+  "Vue3Watch": {
+    "prefix": "v3-watch",
+    "body": [
+      "watch(${1:source}, (newVal, oldVal) => {",
+      "\t$2",
+      "}, { immediate: ${3:false}, deep: ${4:true} })$0"
+    ],
+    "description": "Vue 3 侦听器"
+  },
+  "Vue3FormRules": {
+    "prefix": "v3-form-rules",
+    "body": [
+      "const rules = reactive<FormRules>({",
+      "\t${1:field}: [{ required: true, message: '${2:请输入}', trigger: '${3|blur,change|}' }],",
+      "})$0"
+    ],
+    "description": "Element Plus 表单验证规则"
+  }
+}

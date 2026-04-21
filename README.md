@@ -1,70 +1,115 @@
-# vuequick 插件说明
+# VueQuick - Element Plus 低代码工具 🧩
 
-这是你的扩展 "vuequick" 的中文说明文档。建议包含以下内容：
+基于 Element Plus 的 VSCode 低代码插件，支持组件自动联想、属性/事件提示、内置页面模版快速生成。
 
-## 功能介绍
+## ✨ 功能特性
 
-描述你的扩展的具体功能，并附上插件运行截图。图片路径请相对于本 README 文件填写。
+### 1. 组件自动联想
 
-例如，如果你的项目有 images 文件夹：
+在 Vue/HTML 文件中输入 `<el-` 即可触发 Element Plus 组件自动补全：
 
-![功能 X](images/feature-x.png)
+- **组件标签补全**：输入 `<el-` 自动联想所有 Element Plus 组件，选中后自动插入完整代码片段
+- **属性补全**：组件标签内按空格触发属性联想，包含类型、默认值、是否必填等提示
+- **事件补全**：输入 `@` 触发事件联想，包含事件参数说明
+- **插槽补全**：输入 `#` 触发插槽联想
 
-> 提示：许多流行扩展会使用动画演示功能。推荐使用简短、易于理解的动画。
+### 2. 代码片段（Snippets）
 
-## 依赖要求
+在 Vue 文件中通过前缀快速插入代码片段：
 
-如有依赖或前置条件，请在此说明如何安装和配置。
+| 前缀 | 说明 |
+|------|------|
+| `el-button` | 按钮组件 |
+| `el-input` | 输入框 |
+| `el-select` | 下拉选择框 |
+| `el-table` | 表格 |
+| `el-table-column` | 表格列 |
+| `el-table-column-slot` | 表格列（自定义插槽） |
+| `el-table-column-action` | 表格操作列 |
+| `el-form` | 表单 |
+| `el-form-item` | 表单项 |
+| `el-form-item-input` | 表单项+输入框 |
+| `el-form-item-select` | 表单项+选择框 |
+| `el-dialog` | 对话框 |
+| `el-pagination` | 分页 |
+| `el-card` | 卡片 |
+| `el-tabs` | 标签页 |
+| `el-switch` | 开关 |
+| `el-date-picker` | 日期选择器 |
+| `el-drawer` | 抽屉 |
+| `el-message` | 消息提示 |
+| `el-message-box` | 消息弹框 |
+| `el-upload` | 文件上传 |
+| `el-tag` | 标签 |
+| `el-row` | 栅格行 |
+| `v3-setup` | Vue3 script setup |
+| `v3-ref` | ref 定义 |
+| `v3-reactive` | reactive 定义 |
+| `v3-watch` | 侦听器 |
+| `v3-form-rules` | 表单验证规则 |
+| ... | 更多片段持续更新 |
 
-## 扩展设置
+### 3. 内置页面模版
 
-如扩展通过 `contributes.configuration` 添加了 VS Code 设置，请在此说明。
+通过 Webview 面板选择并生成完整页面：
 
-例如：
+| 模版 | 说明 |
+|------|------|
+| 📊 CRUD 表格页面 | 搜索+表格+分页+弹窗完整 CRUD |
+| 📝 表单页面 | 各种表单控件的完整表单 |
+| 📋 详情页面 | 描述列表展示详细信息 |
+| 🔐 登录页面 | 简洁美观的登录页 |
+| 📈 仪表盘页面 | 统计卡片+图表区域 |
+| 🏠 侧边栏布局 | 后台管理经典布局 |
 
-本扩展贡献了如下设置：
+## 🚀 使用方式
 
-* `myExtension.enable`：启用/禁用本扩展
-* `myExtension.thing`：设置为 `blah` 可执行某项操作
+### 命令面板
 
-## 已知问题
+- `VueQuick: 打开模版面板` — 打开可视化模版选择面板
+- `VueQuick: 快速插入模版` — 快速选择模版插入当前文件
+- `VueQuick: 复制模版到剪贴板` — 复制模版代码
+- `VueQuick: 创建模版文件` — 创建新的 Vue 文件
 
-列出已知问题，帮助用户避免重复反馈。
+### 快捷键
 
-## 更新日志
+- `Ctrl+Shift+T` (Mac: `Cmd+Shift+T`) — 打开模版面板
+- `Ctrl+Shift+I` (Mac: `Cmd+Shift+I`) — 快速插入模版
 
-每次更新请在此记录。
+### 右键菜单
 
-### 1.0.0
+- 文件管理器右键 — 创建模版文件 / 打开模版面板
+- 编辑器右键 (Vue文件) — 快速插入模版 / 打开模版面板
 
-首次发布 ...
+## 🔧 配置
 
-### 1.0.1
+| 配置项 | 默认值 | 说明 |
+|--------|--------|------|
+| `vuequick.enableCompletion` | `true` | 启用组件自动联想 |
+| `vuequick.enableSnippets` | `true` | 启用代码片段 |
 
-修复了问题 #。
+## 📦 支持的 Element Plus 组件
 
-### 1.1.0
+Button, Input, Select, Table, TableColumn, Form, FormItem, Dialog, Pagination, Tabs, Card, Tag, Radio, Checkbox, Switch, DatePicker, Upload, Menu, Tree, Message, Notification, Container, Row, Col, Drawer, Tooltip, Badge, Alert, Image, Progress, Steps, Timeline, Descriptions, Result
 
-新增功能 X、Y、Z。
+## 🛠️ 开发
 
------------------------------------------------------------------------------------------------------------
-## 扩展开发规范
+```bash
+# 安装依赖
+npm install
 
-请确保已阅读并遵循官方扩展开发规范：
+# 编译
+npm run compile
 
-* [扩展开发规范](https://code.visualstudio.com/api/references/extension-guidelines)
+# 监听模式
+npm run watch
 
-## Markdown 使用技巧
+# 打包
+npm run package
+```
 
-**注意：** 你可以使用 VS Code 编辑本 README。常用快捷键如下：
+按 F5 在 VSCode 中启动调试。
 
-* 分屏编辑（macOS：`Cmd+\`，Windows/Linux：`Ctrl+\`）
-* 切换预览（macOS：`Shift+Cmd+V`，Windows/Linux：`Shift+Ctrl+V`）
-* 按 `Ctrl+Space` 查看 Markdown 片段列表
+## 📄 License
 
-### 更多信息
-
-* [VS Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
-
-**祝你使用愉快！**
+MIT

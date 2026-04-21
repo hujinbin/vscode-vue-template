@@ -1,74 +1,138 @@
 {
-	"name": "vuequick",
-	"displayName": "VueQuick",
-	"description": "vue快速生成页面的插件",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.20.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onCommand:vuequick.helloWorld"
-	],
-	"main": "./dist/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "vuequick.helloWorld",
-				"title": "新建模版"
-			}
-		],
-		"menus": {
-			"explorer/context": [
-				{
-					"command": "vuequick.helloWorld",
-					"group": "navigation"
-				}
-			]
-		}
-	},
-	"menus": {
-		"explorer/context": [
-			{
-				"command": "quick-add",
-				"group": "navigation"
-			}
-		]
-	},
-	"snippets": [
-		{
-			"language": "javascript",
-			"path": "./snippets/javascript.json"
-		}
-	],
-	"scripts": {
-		"dev": "npm run watch",
-		"vscode:prepublish": "npm run package",
-		"compile": "webpack",
-		"watch": "webpack --watch",
-		"package": "webpack --mode production --devtool hidden-source-map",
-		"compile-tests": "tsc -p . --outDir out",
-		"watch-tests": "tsc -p . -w --outDir out",
-		"pretest": "npm run compile-tests && npm run compile && npm run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.50.0",
-		"@types/glob": "^7.2.0",
-		"@types/mocha": "^9.1.1",
-		"@types/node": "16.x",
-		"@typescript-eslint/eslint-plugin": "^5.30.0",
-		"@typescript-eslint/parser": "^5.30.0",
-		"eslint": "^8.18.0",
-		"glob": "^8.0.3",
-		"mocha": "^10.0.0",
-		"typescript": "^4.7.4",
-		"ts-loader": "^9.3.1",
-		"webpack": "^5.73.0",
-		"webpack-cli": "^4.10.0",
-		"@vscode/test-electron": "^2.1.5"
-	}
+  "name": "vuequick",
+  "displayName": "VueQuick - Element Plus 低代码工具",
+  "description": "基于 Element Plus 的 VSCode 低代码工具，支持组件自动联想、属性/事件提示、内置页面模版快速生成",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Snippets",
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "vue",
+    "element-plus",
+    "low-code",
+    "snippets",
+    "autocomplete"
+  ],
+  "icon": "resources/icon.png",
+  "activationEvents": [
+    "onLanguage:vue",
+    "onLanguage:html",
+    "onCommand:vuequick.openTemplatePanel",
+    "onCommand:vuequick.quickInsertTemplate",
+    "onCommand:vuequick.copyTemplateToClipboard",
+    "onCommand:vuequick.createTemplateFile"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vuequick.openTemplatePanel",
+        "title": "VueQuick: 打开模版面板"
+      },
+      {
+        "command": "vuequick.quickInsertTemplate",
+        "title": "VueQuick: 快速插入模版"
+      },
+      {
+        "command": "vuequick.copyTemplateToClipboard",
+        "title": "VueQuick: 复制模版到剪贴板"
+      },
+      {
+        "command": "vuequick.createTemplateFile",
+        "title": "VueQuick: 创建模版文件"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "vuequick.createTemplateFile",
+          "group": "navigation@1"
+        },
+        {
+          "command": "vuequick.openTemplatePanel",
+          "group": "navigation@2"
+        }
+      ],
+      "editor/context": [
+        {
+          "when": "resourceLangId == vue",
+          "command": "vuequick.quickInsertTemplate",
+          "group": "navigation@1"
+        },
+        {
+          "when": "resourceLangId == vue",
+          "command": "vuequick.openTemplatePanel",
+          "group": "navigation@2"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "vuequick.openTemplatePanel",
+        "key": "ctrl+shift+t",
+        "mac": "cmd+shift+t",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "vuequick.quickInsertTemplate",
+        "key": "ctrl+shift+i",
+        "mac": "cmd+shift+i",
+        "when": "editorTextFocus && resourceLangId == vue"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "vue",
+        "path": "./snippets/element-plus.json"
+      }
+    ],
+    "configuration": {
+      "title": "VueQuick",
+      "properties": {
+        "vuequick.enableCompletion": {
+          "type": "boolean",
+          "default": true,
+          "description": "启用 Element Plus 组件自动联想"
+        },
+        "vuequick.enableSnippets": {
+          "type": "boolean",
+          "default": true,
+          "description": "启用 Element Plus 代码片段"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "dev": "npm run watch",
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.18.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4",
+    "ts-loader": "^9.3.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "@vscode/test-electron": "^2.1.5"
+  }
 }
